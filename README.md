@@ -14,7 +14,7 @@
 - [x] Implement Algorithm
 - [ ] Create examples
 - [ ] Create tests
-- [ ] (Create package to pip)[https://packaging.python.org/tutorials/packaging-projects/]
+- [ ] Create package to [pip](https://packaging.python.org/tutorials/packaging-projects/)
 - [ ] Create instalation guide
 ## c#
 - [ ] Implement Algorithm
