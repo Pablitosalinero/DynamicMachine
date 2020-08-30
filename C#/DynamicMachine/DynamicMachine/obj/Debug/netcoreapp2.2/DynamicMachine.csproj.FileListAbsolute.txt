@@ -1,3 +1,0 @@
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp2.2\DynamicMachine.csproj.CoreCompileInputs.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp2.2\DynamicMachine.AssemblyInfoInputs.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp2.2\DynamicMachine.AssemblyInfo.cs

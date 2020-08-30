@@ -1,9 +1,0 @@
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\bin\Debug\netcoreapp3.1\DynamicMachine.deps.json
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\bin\Debug\netcoreapp3.1\DynamicMachine.dll
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\bin\Debug\netcoreapp3.1\DynamicMachine.pdb
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp3.1\DynamicMachine.csprojAssemblyReference.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp3.1\DynamicMachine.csproj.CoreCompileInputs.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp3.1\DynamicMachine.AssemblyInfoInputs.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp3.1\DynamicMachine.AssemblyInfo.cs
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp3.1\DynamicMachine.dll
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachine\obj\Debug\netcoreapp3.1\DynamicMachine.pdb

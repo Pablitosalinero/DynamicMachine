@@ -1,4 +1,0 @@
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachineTests\obj\Debug\netcoreapp2.2\DynamicMachineTests.csprojAssemblyReference.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachineTests\obj\Debug\netcoreapp2.2\DynamicMachineTests.csproj.CoreCompileInputs.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachineTests\obj\Debug\netcoreapp2.2\DynamicMachineTests.AssemblyInfoInputs.cache
-C:\Users\pablo.salinas\source\DynamicMachine\C#\DynamicMachine\DynamicMachineTests\obj\Debug\netcoreapp2.2\DynamicMachineTests.AssemblyInfo.cs
