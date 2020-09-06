@@ -22,7 +22,22 @@ namespace DynamicMachineTests
 
             //Assert
             res.Should().NotBeNull();
-            res.Should().HaveCount(6);
+            res.Should().HaveCount(9);
+            return Task.CompletedTask;
+        }
+        [Fact]
+        public Task Test2()
+        {
+            //Act
+            var dynamicMachineLimited = _serviceProvider.GetService<IDynamicMachine>();
+            int[] coins = new int[] { 1, 2, 5, 10, 20, 50, 100, 200, 500 };
+            int[] limits = new int[] { 4050, 2, 1, 1, 1, 4, 1, 2, 4 };
+            int value = 1000;
+            var res = dynamicMachineLimited.ChangeAsync(new ArrayList(coins), value, new ArrayList(limits), coins.Length).Result;
+
+            //Assert
+            res.Should().NotBeNull();
+            res.Should().HaveCount(9);
             return Task.CompletedTask;
         }
     }
