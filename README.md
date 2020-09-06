@@ -1,10 +1,23 @@
 # Algorithm explanation
 
+## Table
+
 |           | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
 |-----------|---|---|---|---|---|---|---|
 | [1]       | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
-| [1, 2]    | 0 |   |   |   |   |   |   |
-| [1, 2, 5] | 0 |   |   |   |   |   |   |
+| [1, 2]    | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| [1, 2, 5] | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+## Coins type
+
+|  1  | 2 | 5 | 10 | 20 | 50 | 100 |
+|-----|---|---|----|----|----|-----|
+
+## Coins limit
+
+|  1  | 2 | 5 | 10 | 20 | 50 | 100 |
+|-----|---|---|----|----|----|-----|
+| 100 | 3 | 4 | 1  |  2 |  5 |  1  |
 
 # TODO
 ## Common
@@ -22,4 +35,5 @@
 - [x] Create tests
 - [ ] Create nuget package
 - [ ] Create instalation guide
-- [ ] Implement multithreading
+- [x] Implement multithreading
+- [ ] Improve multithreading
