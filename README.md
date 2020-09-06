@@ -9,16 +9,17 @@
 # TODO
 ## Common
 - [ ] Complete explanation with git
-- [ ] Implement multithreading
-## Python :snake:
+## :snake: Python
 - [x] Implement Algorithm
 - [ ] Create examples
 - [ ] Create tests
 - [ ] Create package to [pip](https://packaging.python.org/tutorials/packaging-projects/)
 - [ ] Create instalation guide
-## C# :ocean:
-- [ ] Implement Algorithm
+- [ ] Implement multithreading
+## :ocean: C# 
+- [x] Implement Algorithm
 - [ ] Create examples
 - [x] Create tests
 - [ ] Create nuget package
 - [ ] Create instalation guide
+- [ ] Implement multithreading
