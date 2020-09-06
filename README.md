@@ -22,4 +22,4 @@
 - [x] Create tests
 - [ ] Create nuget package
 - [ ] Create instalation guide
-- [ ] Implement multithreading
+- [x] Implement multithreading
