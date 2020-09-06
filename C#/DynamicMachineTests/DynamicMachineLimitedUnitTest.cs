@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using DynamicMachine.Contracts;
 using System.Threading.Tasks;
 using Xunit;
+using System.Collections;
 
 namespace DynamicMachineTests
 {
@@ -14,11 +15,14 @@ namespace DynamicMachineTests
         {
             //Act
             var dynamicMachineLimited = _serviceProvider.GetService<IDynamicMachine>();
-            var res = dynamicMachineLimited.Change();
+            int[] coins = new int[] { 1, 2, 5, 10, 20, 50, 100, 200, 500 };
+            int[] limits = new int[] { 4050, 2, 1, 1, 1, 4 , 1, 2, 4};
+            int value = 222;
+            var res = dynamicMachineLimited.Change(new ArrayList(coins),value, new ArrayList(limits),coins.Length);
 
             //Assert
             res.Should().NotBeNull();
-            res.Should().HaveCount(0);
+            res.Should().HaveCount(6);
             return Task.CompletedTask;
         }
     }

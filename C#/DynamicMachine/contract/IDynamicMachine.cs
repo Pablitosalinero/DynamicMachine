@@ -5,6 +5,6 @@ namespace DynamicMachine.Contracts
 {
     public interface IDynamicMachine
     {
-        public IEnumerable Change();
+        public IEnumerable Change(IEnumerable coins, int value, IEnumerable limit, int nCoins);
     }
 }
