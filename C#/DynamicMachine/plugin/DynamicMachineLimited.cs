@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DynamicMachine.plugin
@@ -92,7 +93,7 @@ namespace DynamicMachine.plugin
             }
         }
 
-        public async Task<IEnumerable> ChangeAsync(IEnumerable coins, int value, IEnumerable limit, int nCoins)
+        public IEnumerable ChangeParallel(IEnumerable coins, int value, IEnumerable limit, int nCoins)
         {
             ArrayList coinsList = coins as ArrayList;
             ArrayList limitList = limit as ArrayList;
@@ -129,19 +130,21 @@ namespace DynamicMachine.plugin
                 }
                 return res;
             }
-
-            Task<IEnumerable> taskRes1 = ChangeAsync(coinsList, value - (int)coinsList[^1], limitList, nCoins);
+            ArrayList res1 = null, res2 = null, res3 = null;
             ArrayList coinsListForNext = coinsList.Clone() as ArrayList;
             coinsListForNext.RemoveAt(coinsList.Count - 1);
-            Task<IEnumerable> taskRes2 = ChangeAsync(coinsListForNext, value, limitList, nCoins);
-            Task<IEnumerable> taskRes3 = ChangeAsync(coinsListForNext, value - ((int)limitList[coinsList.Count - 1] * (int)coinsList[^1]), limit, nCoins);
-            ArrayList res1 = await taskRes1 as ArrayList;
-            ArrayList res2 = await taskRes2 as ArrayList;
+            Thread thread1 = new Thread(() => { res1 = ChangeParallel(coinsList, value - (int)coinsList[^1], limitList, nCoins) as ArrayList; });
+            Thread thread2 = new Thread(() => { res2 = ChangeParallel(coinsListForNext, value, limitList, nCoins) as ArrayList; });
+            Thread thread3 = new Thread(() => { res3 = ChangeParallel(coinsListForNext, value - ((int)limitList[coinsList.Count - 1] * (int)coinsList[^1]), limit, nCoins) as ArrayList; });
+            thread1.Start();
+            thread2.Start();
+            thread3.Start();
+            thread1.Join();
             res1[coinsList.Count - 1] = (int)res1[coinsList.Count - 1] + 1;
             int sum1 = Int32.MaxValue, sum2 = Int32.MaxValue, sum3 = Int32.MaxValue;
             if ((int)res1[coinsList.Count - 1] > (int)limitList[coinsList.Count - 1])
             {
-                ArrayList res3 = taskRes3.Result as ArrayList;
+                thread3.Join();
                 res3[coinsList.Count - 1] = (int)res3[coinsList.Count - 1] + (int)limitList[coinsList.Count - 1];
                 if (!res3.Contains(Int32.MaxValue))
                 {
@@ -151,7 +154,8 @@ namespace DynamicMachine.plugin
                         sum3 += (int)elem;
                     }
                 }
-                    if (!res2.Contains(Int32.MaxValue))
+                thread2.Join();
+                if (!res2.Contains(Int32.MaxValue))
                 {
                     sum2 = 0;
                     foreach (var elem in res2)
@@ -164,6 +168,7 @@ namespace DynamicMachine.plugin
             }
             else
             {
+                thread2.Join();
                 if (!res2.Contains(Int32.MaxValue))
                 {
                     sum2 = 0;

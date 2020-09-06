@@ -30,14 +30,14 @@ namespace DynamicMachineTests
         {
             //Act
             var dynamicMachineLimited = _serviceProvider.GetService<IDynamicMachine>();
-            int[] coins = new int[] { 1, 2, 5, 10, 20, 50, 100, 200, 500 };
-            int[] limits = new int[] { 4050, 2, 1, 1, 1, 4, 1, 2, 4 };
-            int value = 1000;
-            var res = dynamicMachineLimited.ChangeAsync(new ArrayList(coins), value, new ArrayList(limits), coins.Length).Result;
+            int[] coins = new int[] { 1, 2, 5, 10, 20, 50, 100 };
+            int[] limits = new int[] { 4050, 2, 1, 60, 4, 2, 6 };
+            int value = 69;
+            var res = dynamicMachineLimited.ChangeParallel(new ArrayList(coins), value, new ArrayList(limits), coins.Length);
 
             //Assert
             res.Should().NotBeNull();
-            res.Should().HaveCount(9);
+            res.Should().HaveCount(7);
             return Task.CompletedTask;
         }
     }
