@@ -11,7 +11,7 @@ namespace DynamicMachine.plugin
 {
     public class DynamicMachineLimited : IDynamicMachine
     {
-        public IEnumerable Change(IEnumerable coins, int value, IEnumerable limit, int nCoins, int minLocal = Int32.MaxValue)
+        public IEnumerable Change(IEnumerable coins, int value, IEnumerable limit, int nCoins)
         {
             ArrayList coinsList = coins as ArrayList;
             ArrayList limitList = limit as ArrayList;
@@ -63,23 +63,13 @@ namespace DynamicMachine.plugin
             ArrayList coinsListForNext = coinsList.Clone() as ArrayList;
             coinsListForNext.RemoveAt(coinsList.Count - 1);
             ArrayList res2 = new ArrayList();
-            for (int i = 0; i < nCoins; i++)
+            res2 = Change(coinsListForNext, value, limitList, nCoins) as ArrayList;
+            if (!res2.Contains(Int32.MaxValue))
             {
-                res2.Add(Int32.MaxValue);
-            }
-            if ((minLocal == Int32.MaxValue) || (minLocal < sum1))
-            {
-                if (sum1 < minLocal)
-                    res2 = Change(coinsListForNext, value, limitList, nCoins, sum1) as ArrayList;
-                else
-                    res2 = Change(coinsListForNext, value, limitList, nCoins, minLocal) as ArrayList;
-                if (!res2.Contains(Int32.MaxValue))
+                sum2 = 0;
+                foreach (var elem in res2)
                 {
-                    sum2 = 0;
-                    foreach (var elem in res2)
-                    {
-                        sum2 += (int)elem;
-                    }
+                    sum2 += (int)elem;
                 }
             }
             
