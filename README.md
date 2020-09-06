@@ -19,6 +19,6 @@
 ## C# :ocean:
 - [ ] Implement Algorithm
 - [ ] Create examples
-- [ ] Create tests
+- [x] Create tests
 - [ ] Create nuget package
 - [ ] Create instalation guide
